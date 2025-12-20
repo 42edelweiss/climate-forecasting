@@ -1,0 +1,147 @@
+/* Delphi Oracle Style - Inspiré de la Grèce antique */
+
+/* Thème général */
+:root {
+    --delphi-gold: #D4AF37;
+    --delphi-blue: #1E3A8A;
+    --delphi-marble: #F5F5F5;
+    --delphi-dark: #2C3E50;
+    --oracle-purple: #6B46C1;
+}
+
+/* Header principal */
+.main h1 {
+    color: var(--delphi-blue);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--delphi-gold);
+    padding-bottom: 10px;
+}
+
+/* Sous-titres */
+.main h2 {
+    color: var(--oracle-purple);
+    font-style: italic;
+}
+
+/* Code blocks (pour les ASCII art) */
+.main pre {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+/* Boutons */
+.stButton button {
+    background: linear-gradient(135deg, var(--delphi-gold) 0%, var(--oracle-purple) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+    .stButton button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+/* Metrics */
+.stMetric {
+    background: var(--delphi-marble);
+    border-left: 4px solid var(--delphi-gold);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* =========================
+   SIDEBAR – LISIBILITÉ (FIX)
+   ========================= */
+
+/* Fond sidebar */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, var(--delphi-blue) 0%, var(--delphi-dark) 100%) !important;
+}
+
+    /* Titres & textes "hors inputs" */
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3,
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] span,
+    section[data-testid="stSidebar"] small {
+        color: rgba(255,255,255,0.92) !important;
+    }
+
+    /* Labels des widgets */
+    section[data-testid="stSidebar"] label {
+        color: rgba(255,255,255,0.98) !important;
+        font-weight: 700 !important;
+    }
+
+    /* ✅ IMPORTANT : ne JAMAIS mettre  section[data-testid="stSidebar"] * { color: white }
+   sinon tu casses le texte dans les champs (select/input/uploader) */
+
+    /* ---------- Inputs / Selectbox ---------- */
+
+    /* Champ texte (input/textarea) : texte sombre */
+    section[data-testid="stSidebar"] input,
+    section[data-testid="stSidebar"] textarea {
+        color: #111827 !important;
+    }
+
+    /* Selectbox (BaseWeb) : texte sombre dans la zone */
+    section[data-testid="stSidebar"] [data-baseweb="select"] * {
+        color: #111827 !important;
+    }
+
+    /* ---------- File uploader ---------- */
+
+    /* Container uploader (le bloc) */
+    section[data-testid="stSidebar"] div[data-testid="stFileUploader"] {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-radius: 12px !important;
+        padding: 12px !important;
+    }
+
+        /* Texte interne uploader : sombre */
+        section[data-testid="stSidebar"] div[data-testid="stFileUploader"] span,
+        section[data-testid="stSidebar"] div[data-testid="stFileUploader"] small,
+        section[data-testid="stSidebar"] div[data-testid="stFileUploader"] p {
+            color: #111827 !important;
+            font-weight: 600 !important;
+        }
+
+        /* Bouton Browse files */
+        section[data-testid="stSidebar"] div[data-testid="stFileUploader"] button {
+            background: linear-gradient(135deg, var(--delphi-gold), var(--oracle-purple)) !important;
+            color: #ffffff !important;
+            border-radius: 10px !important;
+            font-weight: 800 !important;
+            border: none !important;
+        }
+
+            section[data-testid="stSidebar"] div[data-testid="stFileUploader"] button:hover {
+                transform: scale(1.03);
+                box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+            }
+
+    /* ---------- (Optionnel) Cards pour widgets ---------- */
+    section[data-testid="stSidebar"] [data-testid="stSelectbox"],
+    section[data-testid="stSidebar"] [data-testid="stExpander"] {
+        background: rgba(255,255,255,0.08) !important;
+        border-radius: 12px !important;
+        padding: 10px !important;
+    }
+
+/* ---------- ASCII art plus propre ---------- */
+.main pre {
+    line-height: 1.15 !important;
+    font-size: 12px !important;
+    overflow-x: auto !important;
+    white-space: pre !important;
+}
+
